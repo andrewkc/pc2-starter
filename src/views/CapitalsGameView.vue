@@ -1,12 +1,14 @@
 <script>
 import countries from "/src/datasets/countries.json";
 import CountryComponent from "../components/CountryComponent.vue";
+import CountryView from "./CountryView.vue";
 
 export default {
   name: "CapitalsGameView",
   components: {
     CountryComponent,
-  },
+    CountryView
+},
   data() {
     return {
       country: {},
@@ -17,12 +19,17 @@ export default {
   created() {
     this.country = countries[Math.floor(Math.random() * countries.length)];
   },
+  console() {
+    console.log(countries)
+  },
   methods: {
     setCapital(e) {
       //TODO: implementar. fija la capital del input.
+      this.capital = e.target.value;
     },
     adivinarCapital() {
       //TODO: implementar. verifica se la adivinanza es correcta.
+      return country.capital === this.capital;
     },
   },
 };
@@ -38,6 +45,9 @@ export default {
     <button @click="adivinarCapital">Adivina!</button>
     <div class="countries-container">
       <!--TODO: CREAR EL COMPONENTE PARA VISUALIZAR EL PAIS-->
+      <CountryView
+      > </CountryView>
+    
     </div>
   </div>
 </template>

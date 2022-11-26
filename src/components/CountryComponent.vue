@@ -2,13 +2,14 @@
 export default {
   name: "CountryComponent",
   props: [
-    "name",
+    "name", 
     "capital",
-    "currency_name",
-    "currency",
+    "currency_name", // nombre de divisa
+    "currency", // divisa
     "region",
     "code",
     //TODO: crear una propiedad para determinar si al componente se le puede hacer click
+    "clickeable"
   ],
 };
 </script>
@@ -16,10 +17,19 @@ export default {
 <template>
   <!--TODO: Utilizar la propiedad creada para controlar el click. Cuando el componente es "clickeable", redirigir a la pagina del pais.
   Mira las rutas para ver como redirigir al usuario.-->
+      <nav>
+        <RouterLink to="/home">Home</RouterLink>
+        <RouterLink to="/countries">Country</RouterLink>
+        <RouterLink to="/capitalsGame">capitalsGame</RouterLink>
+        <RouterLink to="/cities">cities</RouterLink>
+        >
+      </nav>
+    <RouterView />
   <div
   >
   <!--TODO: Poblar el HTML con las propiedades. Usar https://countryflagsapi.com/png/${code}-->
   <img
+      src = "https://countryflagsapi.com/png/$" + {{code}};
       width="200"
       height="200"
     />
@@ -47,3 +57,4 @@ h1 {
   text-overflow: ellipsis;
 }
 </style>
+zz
