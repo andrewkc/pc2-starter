@@ -5,10 +5,16 @@ export default {
 }
 </script>
 
-<html>
-
-
-</html>
+<template>
+    <h1>Ciudad</h1>
+    <div class="city">
+        <img
+        src = "./../assets/city.jpg"
+        width="400"
+        height="400"
+        />
+    </div>
+</template>
 
 <style scoped>
     .city {
